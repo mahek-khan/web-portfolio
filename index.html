@@ -1,1 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Website</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="active">
+        <a href="#" class="logo">MK</a>
+        <i class="bx bx-menu" id="menu-icon"></i>
+        <nav>
+            <!-- SPA NAV (NO JUMP) -->
+            <a href="#" data-index="0" class="active">Home</a>
+            <a href="#" data-index="1">Services</a>
+            <a href="#" data-index="2">About</a>
+            <a href="#" data-index="3">Project</a>
+            <a href="#" data-index="4">Contact</a>
+        </nav>
+    </header>
+
+    <div class="bars-animation active">
+        <div class="bar" style="--i:6;"></div>
+        <div class="bar" style="--i:5;"></div>
+        <div class="bar" style="--i:4;"></div>
+        <div class="bar" style="--i:3;"></div>
+        <div class="bar" style="--i:2;"></div>
+        <div class="bar" style="--i:1;"></div>
+    </div>
+
+    <!-- Home Page -->
+    <section class="home active">
+        <div class="home-detail">
+            <h1>Mahek-khan</h1>
+            <h2>I'm a
+                <span style="--i:3;" data-text="frontend Developer">frontend Developer</span>
+                <span style="--i:2;" data-text="backend Developer">backend Developer</span>
+                <span style="--i:1;" data-text="coder">coder</span>
+            </h2>
+
+            <p>
+                I'm a passionate software developer dedicated to crafting clean, efficient, and intuitive applications
+                that solve real-world problems. With a strong foundation in both frontend and backend technologies, I
+                focus on creating seamless user experience
+            </p>
+
+            <div class="btn-sci">
+                
+                <a href="#" class="btn">Download CV</a>
+                <div class="sci">
+                    <a href="https://github.com/mahek-khan" target="_blank"><i class="fa-brands fa-github"></i><span>GitHub</span></a>
+                    <a href="https://www.linkedin.com/in/mahek-khan-831044310?" target="_blank"><i
+                        class="fa-brands fa-linkedin"></i><span>LinkedIn</span></a>
+                    <a href="https://www.instagram.com/_logiccrash_" target="_blank"><i
+                        class="fa-brands fa-instagram"></i><span>Instagram</span></a>
+                    <a href="https://t.me/mahek_tabassum" target="_blank"><i class="fa-brands fa-telegram"></i><span>Telegram</span></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="home-img">
+            <div class="img-box">
+                <div class="img-item">
+
+                    <img src="imges/mahek.jpeg" alt="Profile">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section class="services">
+        <h2 class="heading">My <span>Services</span></h2>
+
+        <div class="services-container">
+            <div class="services-box">
+                <div class="icon"><i class='bx bx-code-alt'></i></div>
+                <h3>Web Development</h3>
+                <p>Frontend websites and UI development.</p>
+            </div>
+
+            <div class="services-box">
+                <div class="icon"><i class='bx bxs-paint'></i></div>
+                <h3>UI Design</h3>
+                <p>Clean and modern user interfaces.</p>
+            </div>
+
+            <div class="services-box">
+                <div class="icon"><i class='bx bx-trending-up'></i></div>
+                <h3>Growth & optimization</h3>
+                <p>Website optimization and performance.</p>
+            </div>
+
+            <div class="services-box">
+                <div class="icon"><i class='bx bx-data'></i></div>
+                <h3>database Management system</h3>
+                <p>Design, management and optimization of databases with SQL and NoSQL technologies.</p>
+            </div>
+
+
+            <div class="services-box">
+                <div class="icon"><i class='bx bx-brain'></i></div>
+                <h3>problem-solving</h3>
+                <p>I practice Data Structures and Algorithms to strength my logic and write efficient solutions . I
+                    enjoy breaking probelms into simple steps and improving my approach with every challenge.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Resume Section -->
+    <section class="resume ">
+        <div class="resume-container">
+
+            <!-- Left Side -->
+            <div class="resume-box">
+                <h2>Why hire me?</h2>
+                <p class="desc">
+                    I am a motivated student currently building my computer and technical skills.
+                    I have learned Microsoft Excel and basic computer operations, and I am now exploring computer
+                    systems and programming fundamentals.
+                    I am focused on learning consistently and improving my practical skills step by step. </p>
+
+                <button class="resume-btn active">Experience</button>
+                <button class="resume-btn">Education</button>
+                <button class="resume-btn">Skills</button>
+                <button class="resume-btn">About Me</button>
+            </div>
+
+            <!-- Right Side -->
+            <div class="resume-box">
+                <!-- Experience -->
+                <div class="resume-detail active">
+                    <h2 class="heading">My <span>Experience</span></h2>
+                    <p class="desc">
+                        Here are some of my professional experiences that showcase my journey, skills and dedication in
+                        web development and collaboration.</p>
+                    <div class="resume-list">
+                        <div class="resume-item">
+                            <p class="year">2021 – Present</p>
+                            <h3>Hands-on Project Development Exp.</h3>
+                            <!-- <p class="company"><h1>Guided Projects & Academic Work</h1></p> -->
+                            <p>Built self-driven projects applications, and games. Strengthened problem-solving and
+                                practical coding skills through independent project work..</p>
+                        </div>
+                        <!-- <div class="resume-item">
+                        <h3>Game Developer</h3>
+                        <p>C++ games with physics simulation. Polished UIs for smooth gameplay.</p>
+                    </div>
+
+                    <div class="resume-item">
+                        <h3>Fullstack Developer</h3>
+                        <p>Full-stack websites using HTML/CSS/JavaScript. APIs, databases, and security implemented.</p>
+                    </div>
+                    <div class="resume-item">
+                        <h3>Java Developer</h3>
+                        <p>Enterprise apps using Java. Multithreading, APIs, databases mastered.</p>
+                    </div>
+                    <div class="resume-item">
+                        <h3>Software Engineer (C/C++)</h3>
+                        <p>Scalable APIs with C/C++. System-level programming and optimization.</p>
+                    </div> -->
+                    </div>
+                </div>
+
+                <!-- Education-->
+                <div class="resume-detail">
+                    <h2 class="heading">My <span>Education</span></h2>
+                    <p class="desc">
+                        Computer Science degree acquired.
+                        Software engineering expertise developed.
+                    </p>
+                    <div class="resume-list">
+                        <div class="resume-item">
+                            <p class="year">2024</p>
+                            <h1>Python Development</h1>
+                            <p>Python automation and data analysis. Machine learning An all.</p>
+                        </div>
+
+                        <div class="resume-item">
+                            <p class="year">2023</p>
+                            <h1>Full-Stack Web Development</h1>
+                            <p>Full-stack websites using web technologies. APIs and databases integrated.</p>
+                        </div>
+
+                        <div class="resume-item">
+                            <p class="year">2022</p>
+                            <h1>Java Programming & Enterprise Development</h1>
+                            <p>Enterprise Java applications developed. APIs and databases architecture.</p>
+                        </div>
+
+                        <div class="resume-item">
+                            <p class="year">2021</p>
+                            <h1>C/C++ Software Engineering</h1>
+                            <p>C++ games with physics systems. Game engines and optimization learned.
+                                APIs and system-level programming. Performance optimization mastered thoroughly.
+                            </p>
+                        </div>
+                        <div class="resume-item">
+                            <p class="year">2020</p>
+                            <h1>Intermediate Second Year(MPC)</h1>
+                            <p>Strong foundation in Physics and Mathematics. Learned binary language and system concepts
+                                independently.</p>
+                        </div>
+                        <div class="resume-item">
+                            <p class="year">2019</p>
+                            <h1>Intermediate First Year(MPC)</h1>
+                            <p>Learned Excel and basic computer skills.</p>
+                        </div>
+
+
+                    </div>
+                </div>
+                <!-- SKILLS -->
+                <div class="resume-detail skills">
+                    <h2 class="heading">My <span>Skills</span></h2>
+                    <p class="desc">HTML, CSS, JavaScript, C, C++, Python, Excel, Responsive.</p>
+
+                    <div class="resume-list">
+                        <div class="resume-item"><i class='bx bxl-html5'></i><span>HTML</span></div>
+                        <div class="resume-item"><i class='bx bxl-css3'></i><span>CSS</span></div>
+                        <div class="resume-item"><i class='bx bxl-javascript'></i><span>JavaScript</span></div>
+                        <div class="resume-item"><i class='bx bxl-python'></i><span>Python</span></div>
+                        <div class="resume-item"><i class="devicon-c-plain colored"></i><span>C</span></div>
+                        <div class="resume-item"><i class="devicon-cplusplus-plain colored"></i><span>C++</span></div>
+                        <div class="resume-item"><i class="devicon-microsoftsqlserver-plain"></i><span>Excel</span>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- ABOUT -->
+                <div class="resume-detail about">
+                    <h2 class="heading">About <span>Me</span></h2>
+                    <p class="desc">
+                        Passionate coder and programmer. Committed to quality development.
+                    </p>
+                    <div class="resume-list">
+                        <div class="resume-item">                       
+                            <p>name<span>Mahek Khan</span></p>
+                        </div>
+                        <div class="resume-item">
+                            <p>cgpa<span>80%</span></p>
+                        </div>
+                        <div class="resume-item">
+                            <p>Gender<span>female</span></p>
+                        </div>
+                        <div class="resume-item">
+                            <p>Age<span>20 Year Old</span></p>
+                        </div>
+                        <div class="resume-item">
+                            <p>Status<span>Unmarried </span></p>
+                        </div>
+                        <div class="resume-item">
+                            <p>city<span>Nizamabad</span></p>
+                        </div>
+                        <div class="resume-item">
+                            <p>Nationality<span>Indian</span></p>
+                        </div>
+                        <div class="resume-item">
+                            <p>Part-time<span>Available</span></p>
+                        </div>
+                        <div class="resume-item">
+                            <p>Debugging<span>Available</span></p>
+                        </div>
+                        <div class="resume-item">
+                            <p>contact<span>9XXXXXXXX8</span></p>
+                        </div>
+                        <div class="resume-item">
+                            <p>Email<span>mahekkhan7222@gmail.com</span></p>
+                        </div>
+                        <div class="resume-item">
+                            <p>Language<span>Hindi, English, arabic</span></p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- /*potfolio setion*/ -->
+    <section class="portfolio">
+        <h2 class="heading">Latest <span>Project</span></h2>
+        <div class="portfolio-container">
+            <!-- LEFT SIDE -->
+            <div class="portfolio-box">
+
+                <!-- PROJECT 01 -->
+                <div class="portfolio-detail active">
+                    <p class="numb">01</p>
+                    <h3>Basic Calculator</h3>
+                    <p>This project is a basic calculator built using C++ that performs simple arithmetic operations like addition, subtraction, multiplication, and division based on user input.</p>
+                    <div class="tech">
+                        <p>Using c++ </p>
+                    </div>
+                    <div class="live-github">
+                        <a href="#"><i class='bx bx-arrow-back'></i></a>
+                        <a href="https://github.com/mahek-khan" target="_blank"><i class='bx bxl-github'></i></a>
+                    </div>
+                </div>
+
+                <!-- PROJECT 02 -->
+                <div class="portfolio-detail">
+                    <p class="numb">02</p>
+                    <h3>To-Do List:</h3>
+                    <p>Add support for advanced operations (modulus, power, square root)
+                       Improve input validation to handle wrong inputs,Add a better user menu for easier
+                        interaction Improve code structure for readability.</p>
+                    <div class="tech">
+                        <p>HTML, CSS, JavaScript</p>
+                    </div>
+                    <div class="live-github">
+                        <a href="#"><i class='bx bx-arrow-back'></i></a>
+                        <a href="https://github.com/mahek-khan" target="_blank"><i class='bx bxl-github'></i></a>
+                    </div>
+                </div>
+
+                <!-- PROJECT 03 -->
+                <div class="portfolio-detail">
+                    <p class="numb">03</p>
+                    <h3>Flappy Bird Game </h3>
+                    <p>This project is a browser-based Flappy Bird game built using HTML, CSS, and JavaScript. 
+                        The game includes player controls, obstacle generation, collision detection, 
+                        and score tracking to recreate the classic Flappy Bird gameplay.</p>
+                    <div class="tech">
+                        <p>HTML, CSS, JavaScript</p>
+                    </div>
+                    <div class="live-github">
+                        <a href="#"><i class='bx bx-arrow-back'></i></a>
+                        <a href="https://github.com/mahek-khan" target="_blank"><i class='bx bxl-github'></i></a>
+                    </div>
+                </div>
+
+                <!-- PROJECT 04 -->
+                <div class="portfolio-detail">
+                    <p class="numb">04</p>
+                    <h3>Weather Dashboard</h3>
+                    <p>A small dashboard that fetches weather data from an external API and 
+                        displays current conditions and forecasts. Emphasis on API integration and responsive
+                         cards. Role: API integration and UI layout.</p>
+                    <div class="tech">
+                        <p>HTML, CSS, JavaScript</p>
+                    </div>
+                    <div class="live-github">
+                        <a href="#"><i class='bx bx-arrow-back'></i></a>
+                        <a href="https://github.com/mahek-khan" target="_blank"><i class='bx bxl-github'></i></a>
+                    </div>
+                </div>
+
+                <!-- PROJECT 05 -->
+                <div class="portfolio-detail">
+                    <p class="numb">05</p>
+                    <h3>Login & Signup System</h3>
+                    <p>This project is a simple login and signup system developed using C++. It allows users to create an account and log in using stored credentials. The project demonstrates file handling, user authentication logic, and basic security concepts..</p>
+                    <div class="tech">
+                        <p>C++</p>
+                    </div>
+                    <div class="live-github">
+                        <a href="#"><i class='bx bx-arrow-back'></i></a>
+                        <a href="https://github.com/mahek-khan" target="_blank"><i class='bx bxl-github'></i></a>
+                    </div>
+                </div>
+
+                <!-- PROJECT 06 -->
+                <div class="portfolio-detail">
+                    <p class="numb">06</p>
+                    <h3>Student Management System</h3>
+                    <p>This project is a console-based Student Management System developed using C++.
+                        It allows users to add, update, delete, and view student records. The system uses file handling to store data.</p>
+                    <div class="tech">
+                        <p>C++</p>
+                    </div>
+                    <div class="live-github">
+                        <a href="#"><i class='bx bx-arrow-back'></i></a>
+                        <a href="https://github.com/mahek-khan" target="_blank"><i class='bx bxl-github'></i></a>
+                    </div>
+                </div>
+
+                <!-- PROJECT 07 -->
+                  <div class="portfolio-detail">
+                    <p class="numb">07</p>
+                    <h3>analysis Data</h3>
+                    <p>Performed data analysis using Python and SQL to extract, clean, and interpret data. Created meaningful 
+                        reports and visualizations to uncover insights and support decision-making.</p>
+                    <div class="tech">
+                        <p>Python</p>
+                    </div>
+                    <div class="live-github">
+                        <a href="#"><i class='bx bx-arrow-back'></i></a>
+                        <a href="https://github.com/mahek-khan" target="_blank"><i class='bx bxl-github'></i></a>
+                    </div>
+                </div>
+                <!--PROJECT..08-->
+                <div class="portfolio-detail">
+                    <p class="numb">08</p>
+                    <h3>portfolio</h3>
+                    <p>a fully custom personal website to serve as a central hub for my professional work. Built with a focus on responsive design and modern web standards, showcasing my ability to manage a project from the design phase through to a live launch..</p>
+                    <div class="tech">
+                        <p>HTML, CSS, JavaScript</p>
+                    </div>
+                    <div class="live-github">
+                        <a href="#"><i class='bx bx-arrow-back'></i></a>
+                        <a href="https://github.com/mahek-khan" target="_blank"><i class='bx bxl-github'></i></a>
+                    </div>
+                </div>
+               
+
+            </div>
+
+            <!-- RIGHT SIDE -->
+            <div class="portfolio-box">
+
+                <div class="portfolio-carousel">
+                    <div class="img-slide">
+                        <div class="img-item"><img src="imges/portfolio1.png"></div>
+                        <div class="img-item"><img src="imges/portfolio2.png"></div>
+                        <div class="img-item"><img src="imges/portfolio3.png"></div>
+                        <div class="img-item"><img src="imges/portfolio4.png"></div>
+                        <div class="img-item"><img src="imges/portfolio5.png"></div>
+                        <div class="img-item"><img src="imges/portfolio6.png"></div>
+                        <div class="img-item"><img src="imges/portfolio7.png"></div>
+                        <div class="img-item"><img src="imges/portfolio8.png"></div>
+                    </div>
+                </div>
+
+                <div class="navigation">
+                    <button id="prev">◀</button>
+                    <button id="next">▶</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- contact section -->
+    <section class="contact ">
+        <div class="contact-container">
+            <div class="contact-box">
+                <h2>let's work together</h2>
+                <p class="desc">Let's build amazing projects together. I'm ready to collaborate with you.</p>
+                <div class="contact-detail">
+                    <i class='bx bxs-phone'></i>
+                    <div class="detail">
+                        <p>Phone</p>
+                        <p> (+91) 9XXXXXXXX8</p>
+                    </div>
+                </div>
+
+                <div class="contact-detail">
+                    <i class='bx bxs-envelope'></i>
+                    <div class="detail">
+                        <p>Email</p>
+                        <p>mahekkhan7222@gmail.com</p>
+                    </div>
+                </div>
+
+                <div class="contact-detail">
+                    <i class='bx bxs-map'></i>
+                    <div class="detail">
+                        <p>Adress</p>
+                        <p>1-1-305/14 100 feed ,Nizamabad</p>
+                    </div>
+                </div>
+
+            </div>
+            <div class="contact-box">
+                <form action="">
+                    <h2 class="heading">Contact<span>me!</span></h2>
+                    <div class="field-box">
+                        <input type="text" placeholder="Full name" required>
+                        <input type="email" placeholder="Email Address" required>
+                        <input type="text" placeholder="Phone Number" required>
+                        <input type="text" placeholder="Email Subject" required>
+                        <textarea name="" id="" placeholder="Your Message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn">Send message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- ✅ IMPORTANT: JS PATH MUST BE RELATIVE -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>
