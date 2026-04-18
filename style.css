@@ -12,11 +12,11 @@
 
 :root {
     --bg-color: #f9f5ff;
-    --second-bg-color: #ede6ff;
-    --main-color: #7c3aed;
-    --accent-color: #a16207;
-    --text-color: #1a1a2e;
-    --white-color: #fff;
+    --second-bg-color: lab(99.11% 0.86 -1.32);
+    --main-color: #9d7fd1;
+    --accent-color: #9209ed;
+    --text-color: #1b1b42;
+    --white-color: #ffffff;
     --disabled-color: #c4b5fd;
     --shadow: rgba(124, 58, 237, 0.15);
 }
