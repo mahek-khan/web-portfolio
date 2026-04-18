@@ -28,6 +28,8 @@ body {
     background: var(--bg-color);
     overflow: hidden;
 }
+
+/* ── HEADER ── */
 header {
     position: fixed;
     top: 0;
@@ -79,6 +81,8 @@ nav a.active {
     display: none;
     cursor: pointer;
 }
+
+/* ── BARS ANIMATION ── */
 .bars-animation .bar {
     flex: 1;
     height: 100%;
@@ -106,6 +110,8 @@ nav a.active {
     0%   { transform: scaleY(0); }
     100% { transform: scaleY(1); }
 }
+
+/* ── SECTIONS ── */
 section {
     position: absolute;
     width: 100%;
@@ -130,6 +136,8 @@ section.active {
         overflow: auto;
     }
 }
+
+/* ── HOME ── */
 .home {
     display: flex;
     align-items: center;
@@ -229,6 +237,8 @@ section.active {
 .home-detail .btn-sci .sci a:hover span {
     opacity: 1;
 }
+
+/* ── BUTTONS ── */
 .btn {
     display: inline-block;
     padding: 1.2rem 3rem;
@@ -249,6 +259,7 @@ section.active {
     box-shadow: none;
 }
 
+/* ── PROFILE IMAGE ── */
 .home-img .img-box {
     position: relative;
     width: 32vw;
@@ -296,6 +307,8 @@ section.active {
     object-fit: cover;
     border-radius: 50%;
 }
+
+/* ── HEADINGS ── */
 .heading {
     font-size: 4.5rem;
     text-align: center;
@@ -351,6 +364,8 @@ section.active {
     color: #4a4a6a;
     line-height: 1.6;
 }
+
+/* ── RESUME ── */
 .resume-container {
     display: grid;
     grid-template-columns: 1fr 2fr;
@@ -429,7 +444,9 @@ section.active {
 .resume-item .year { color: var(--accent-color); font-weight: 600; }
 .resume-item h3 { font-size: 2rem; color: var(--text-color); }
 .resume-item h1 { font-size: 2rem; color: var(--main-color); margin-bottom: .5rem; }
-.resume-item p  { font-size: 1.5rem; color: #4a4a6a; 
+.resume-item p  { font-size: 1.5rem; color: #4a4a6a; }
+
+/* Skills */
 .resume-detail.skills .resume-list {
     grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
     height: auto;
@@ -498,6 +515,8 @@ section.active {
     opacity: 1;
     transform: translateX(-50%) scale(1);
 }
+
+/* About */
 .resume-detail.about .resume-list {
     height: auto;
     grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
@@ -523,6 +542,8 @@ section.active {
     font-size: 1.6rem;
     font-weight: 400;
 }
+
+/* ── PORTFOLIO ── */
 .portfolio {
     padding: 8rem 8% 5rem;
 }
@@ -692,6 +713,8 @@ section.active {
     border-color: var(--disabled-color);
     color: var(--disabled-color);
 }
+
+/* ── CONTACT ── */
 .contact-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -773,6 +796,7 @@ section.active {
 
 .contact-box .btn { margin-top: 2rem; }
 
+/* ── BREAKPOINTS ── */
 @media screen and (max-width: 1200px) {
     html { font-size: 55%; }
 }
