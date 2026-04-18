@@ -11,13 +11,12 @@
 }
 
 :root {
-    --bg-color: #1f242d;
-    --second-big-color: #323946;
-    --main-color: #7cf30d;
-    --white-color: #fff;
-    --disabled-color: #fff3;
+    --bg-color: #f5f0ff;
+    --second-big-color: #ede6ff;
+    --main-color: #7c3aed;
+    --white-color: #1a1a2e;
+    --disabled-color: #7c3aed55;
 }
-
 html {
     font-size: 62.5%;
 }
