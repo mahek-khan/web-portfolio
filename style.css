@@ -11,29 +11,31 @@
 }
 
 :root {
-    --bg-color: #f5f0ff;
-    --second-big-color: #ede6ff;
+    --bg-color: #f9f5ff;
+    --second-bg-color: #ede6ff;
     --main-color: #7c3aed;
-    --white-color: #1a1a2e;
-    --disabled-color: #7c3aed55;
-}
-html {
-    font-size: 62.5%;
+    --accent-color: #a16207;
+    --text-color: #1a1a2e;
+    --white-color: #fff;
+    --disabled-color: #c4b5fd;
+    --shadow: rgba(124, 58, 237, 0.15);
 }
 
+html { font-size: 62.5%; }
+
 body {
-    color: var(--white-color);
+    color: var(--text-color);
     background: var(--bg-color);
     overflow: hidden;
 }
-
 header {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     padding: 2rem 9%;
-    background: var(--second-big-color);
+    background: var(--white-color);
+    box-shadow: 0 2px 20px var(--shadow);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -53,16 +55,17 @@ header.active {
 
 .logo {
     font-size: 3rem;
-    color: var(--white-color);
-    font-weight: 700;
+    color: var(--main-color);
+    font-weight: 800;
+    letter-spacing: 2px;
 }
 
 nav a {
-    font-size: 2rem;
-    color: var(--white-color);
+    font-size: 1.7rem;
+    color: var(--text-color);
     font-weight: 500;
     margin-left: 3.5rem;
-    transition: .5s;
+    transition: .3s;
 }
 
 nav a:hover,
@@ -72,9 +75,10 @@ nav a.active {
 
 #menu-icon {
     font-size: 4rem;
+    color: var(--main-color);
     display: none;
+    cursor: pointer;
 }
-
 .bars-animation .bar {
     flex: 1;
     height: 100%;
@@ -102,7 +106,6 @@ nav a.active {
     0%   { transform: scaleY(0); }
     100% { transform: scaleY(1); }
 }
-
 section {
     position: absolute;
     width: 100%;
@@ -127,8 +130,6 @@ section.active {
         overflow: auto;
     }
 }
-
-/* ── HOME ── */
 .home {
     display: flex;
     align-items: center;
@@ -138,6 +139,7 @@ section.active {
 
 .home-detail h1 {
     font-size: clamp(3.5rem, 10vw, 5.5rem);
+    color: var(--text-color);
 }
 
 .home-detail h2 {
@@ -147,11 +149,11 @@ section.active {
     display: flex;
     align-items: center;
     gap: 1rem;
+    color: var(--text-color);
     flex-wrap: nowrap;
     white-space: nowrap;
 }
 
-/* The animated typing word */
 .typing-text {
     color: var(--main-color);
     border-right: 3px solid var(--main-color);
@@ -159,6 +161,7 @@ section.active {
     overflow: hidden;
     display: inline-block;
     animation: blink-cursor 0.7s step-end infinite;
+    font-weight: 700;
 }
 
 @keyframes blink-cursor {
@@ -168,30 +171,32 @@ section.active {
 
 .home-detail p {
     font-size: 1.8rem;
-    line-height: 1.6;
+    line-height: 1.7;
     max-width: 60rem;
+    color: #4a4a6a;
 }
 
 .home-detail .btn-sci {
     display: flex;
     align-items: center;
     margin-top: 2.5rem;
+    flex-wrap: wrap;
+    gap: 1.5rem;
 }
 
 .home-detail .btn-sci .sci {
-    margin-left: 3rem;
+    display: flex;
+    gap: 1rem;
 }
 
 .home-detail .btn-sci .sci a {
     display: inline-flex;
-    padding: 0.8rem;
     border: 2px solid var(--main-color);
     border-radius: 50%;
     font-size: 2rem;
     color: var(--main-color);
-    margin: 0 0.2rem;
     transition: 0.3s ease;
-    background: var(--second-big-color);
+    background: var(--white-color);
     width: 4.5rem;
     height: 4.5rem;
     align-items: center;
@@ -202,40 +207,39 @@ section.active {
 .home-detail .btn-sci .sci a span {
     position: absolute;
     bottom: 120%;
-    background: transparent;
-    color: var(--main-color);
-    padding: 0.4rem 0.6rem;
+    color: var(--white-color);
+    background: var(--main-color);
+    padding: 0.4rem 0.8rem;
     border-radius: 0.5rem;
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     opacity: 0;
     pointer-events: none;
     transition: 0.2s;
     white-space: nowrap;
-    font-weight: 700;
+    font-weight: 600;
 }
 
 .home-detail .btn-sci .sci a:hover {
     background: var(--main-color);
-    color: var(--bg-color);
-    box-shadow: 0 0 20px rgba(124, 243, 13, 0.5);
+    color: var(--white-color);
+    box-shadow: 0 0 20px var(--shadow);
     transform: translateY(-5px);
 }
 
 .home-detail .btn-sci .sci a:hover span {
     opacity: 1;
 }
-
 .btn {
     display: inline-block;
-    padding: 1rem 3rem;
+    padding: 1.2rem 3rem;
     background: var(--main-color);
     border: .2rem solid var(--main-color);
     border-radius: 4rem;
-    box-shadow: 0 0 1rem var(--main-color);
+    box-shadow: 0 4px 15px var(--shadow);
     font-size: 1.6rem;
-    color: var(--bg-color);
-    font-weight: 500;
-    transition: .5s;
+    color: var(--white-color);
+    font-weight: 600;
+    transition: .3s;
     cursor: pointer;
 }
 
@@ -268,9 +272,7 @@ section.active {
     animation: rotate-border 10s linear infinite;
 }
 
-.home-img .img-box::after {
-    animation-delay: -5s;
-}
+.home-img .img-box::after { animation-delay: -5s; }
 
 @keyframes rotate-border {
     100% { transform: rotate(360deg); }
@@ -282,7 +284,6 @@ section.active {
     height: 100%;
     background: var(--bg-color);
     border-radius: 50%;
-    border: .01rem solid var(--bg-color);
     display: flex;
     justify-content: center;
     z-index: 1;
@@ -295,36 +296,35 @@ section.active {
     object-fit: cover;
     border-radius: 50%;
 }
-
-/* ── HEADINGS ── */
 .heading {
     font-size: 4.5rem;
     text-align: center;
     margin-bottom: 2rem;
+    color: var(--text-color);
 }
 
-.heading span {
-    color: var(--main-color);
-}
+.heading span { color: var(--main-color); }
 
 /* ── SERVICES ── */
 .services-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
     gap: 2rem;
 }
 
-.services-container .services-box {
+.services-box {
     padding: 3rem 2.5rem;
-    background: var(--second-big-color);
-    border: .2rem solid var(--second-big-color);
-    border-radius: 1rem;
-    transition: .5s;
+    background: var(--white-color);
+    border: .2rem solid #e9d5ff;
+    border-radius: 1.2rem;
+    transition: .3s;
+    box-shadow: 0 2px 10px var(--shadow);
 }
 
-.services-container .services-box:hover {
+.services-box:hover {
     border-color: var(--main-color);
-    transform: scale(1.02);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px var(--shadow);
 }
 
 .services-box .icon {
@@ -335,55 +335,22 @@ section.active {
 
 .services-box .icon i {
     font-size: 4.5rem;
-    transition: .5s;
-}
-
-.services-box:hover .icon :not(a i) {
     color: var(--main-color);
-}
-
-.services-box .icon a {
-    width: 4.5rem;
-    height: 4.5rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: var(--white-color);
-    border: .2rem solid var(--white-color);
-    border-radius: 50%;
-    transition: .5s;
-}
-
-.services-box:hover .icon a {
-    background: var(--main-color);
-}
-
-.services-box .icon a i {
-    font-size: 3rem;
-    color: var(--bg-color);
-    transform: rotate(225deg);
-    transition: .5s;
-}
-
-.services-box .icon a:hover i {
-    transform: rotate(180deg);
+    transition: .3s;
 }
 
 .services-box h3 {
-    font-size: 3rem;
-    margin: .5rem 0 2rem;
-    color: #7c3aed;
-}
-
-.services-box:hover h3 {
-    color: var(--main-color);
+    font-size: 2.4rem;
+    margin: 1.5rem 0 1rem;
+    color: var(--accent-color);
+    font-weight: 700;
 }
 
 .services-box p {
     font-size: 1.6rem;
+    color: #4a4a6a;
+    line-height: 1.6;
 }
-
-/* ── RESUME ── */
 .resume-container {
     display: grid;
     grid-template-columns: 1fr 2fr;
@@ -392,45 +359,41 @@ section.active {
 
 .resume-box h2 {
     font-size: 4.5rem;
+    color: var(--text-color);
 }
 
-.resume-box h2 span {
-    color: var(--main-color);
-}
-
-.resume-box p {
-    font-size: 1.6rem;
-}
-
-.resume-box .desc {
-    margin: 2rem 0 2.5rem;
-}
+.resume-box h2 span { color: var(--main-color); }
+.resume-box p { font-size: 1.6rem; color: #4a4a6a; }
+.resume-box .desc { margin: 2rem 0 2.5rem; }
 
 .resume-box .resume-btn {
     width: 100%;
     height: 5.3rem;
-    background: #384152;
-    border: .2rem solid var(--bg-color);
+    background: var(--white-color);
+    border: .2rem solid #e9d5ff;
     font-size: 1.6rem;
-    color: var(--white-color);
+    color: var(--text-color);
     font-weight: 500;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
     border-radius: .8rem;
     cursor: pointer;
+    transition: .3s;
 }
 
-.resume-box .resume-btn.active {
+.resume-box .resume-btn:hover {
     border-color: var(--main-color);
     color: var(--main-color);
 }
 
-.resume-detail {
-    display: none;
+.resume-box .resume-btn.active {
+    border-color: var(--main-color);
+    background: var(--second-bg-color);
+    color: var(--main-color);
+    font-weight: 700;
 }
 
-.resume-detail.active {
-    display: block;
-}
+.resume-detail { display: none; }
+.resume-detail.active { display: block; }
 
 .resume-box .heading {
     font-size: 3.5rem;
@@ -439,7 +402,7 @@ section.active {
 
 .resume-list {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
     gap: 2rem;
     height: 45rem;
     overflow: auto;
@@ -452,28 +415,31 @@ section.active {
 }
 
 .resume-list .resume-item {
-    background: var(--second-big-color);
+    background: var(--white-color);
+    border: 1px solid #e9d5ff;
     border-radius: .8rem;
     padding: 2rem 2.5rem;
     height: calc((45rem - 2rem)/2);
     display: flex;
     flex-direction: column;
     justify-content: center;
+    box-shadow: 0 2px 8px var(--shadow);
 }
 
-.resume-item .year { color: var(--main-color); }
-.resume-item h3 { font-size: 2.2rem; }
-
-/* Skills */
+.resume-item .year { color: var(--accent-color); font-weight: 600; }
+.resume-item h3 { font-size: 2rem; color: var(--text-color); }
+.resume-item h1 { font-size: 2rem; color: var(--main-color); margin-bottom: .5rem; }
+.resume-item p  { font-size: 1.5rem; color: #4a4a6a; 
 .resume-detail.skills .resume-list {
-    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
     height: auto;
     overflow: visible;
 }
 
 .resume-detail.skills .resume-item {
     position: relative;
-    background: var(--second-big-color);
+    background: var(--white-color);
+    border: 1px solid #e9d5ff;
     border-radius: .8rem;
     height: 12rem;
     display: flex;
@@ -482,23 +448,30 @@ section.active {
     justify-content: center;
     gap: 1rem;
     cursor: pointer;
+    transition: .3s;
+}
+
+.resume-detail.skills .resume-item:hover {
+    border-color: var(--main-color);
+    transform: translateY(-4px);
+    box-shadow: 0 6px 20px var(--shadow);
 }
 
 .resume-detail.skills .resume-item i {
-    font-size: 7rem;
-    color: var(--white-color);
+    font-size: 6rem;
+    color: var(--text-color);
     transition: .3s;
 }
 
 .resume-detail.skills .resume-item:hover i {
-    transform: scale(1.1);
     color: var(--main-color);
+    transform: scale(1.1);
 }
 
 .skill-text {
-    font-size: 2.6rem;
+    font-size: 2rem;
     font-weight: 600;
-    color: var(--white-color);
+    color: var(--text-color);
 }
 
 .resume-detail.skills .resume-item:hover .skill-text {
@@ -507,26 +480,24 @@ section.active {
 
 .resume-detail.skills .resume-item span:not(.skill-text) {
     position: absolute;
-    top: -3.2rem;
+    top: -3.5rem;
     left: 50%;
     transform: translateX(-50%) scale(.9);
-    background: var(--white-color);
-    color: var(--bg-color);
-    font-size: 1.4rem;
+    background: var(--main-color);
+    color: var(--white-color);
+    font-size: 1.3rem;
     padding: .4rem .9rem;
     border-radius: .6rem;
     pointer-events: none;
     opacity: 0;
     transition: .25s ease;
+    white-space: nowrap;
 }
 
 .resume-detail.skills .resume-item:hover span:not(.skill-text) {
-    top: -4.2rem;
     opacity: 1;
     transform: translateX(-50%) scale(1);
 }
-
-/* About */
 .resume-detail.about .resume-list {
     height: auto;
     grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
@@ -534,18 +505,24 @@ section.active {
 
 .resume-detail.about .resume-item {
     height: auto;
-    padding: 0 0 .5rem;
-    background: transparent;
+    padding: 1rem 1.5rem;
+    background: var(--white-color);
+    border: 1px solid #e9d5ff;
+    border-radius: .8rem;
 }
 
-.resume-detail.about .resume-item p { color: var(--main-color); }
+.resume-detail.about .resume-item p {
+    color: var(--accent-color);
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+
 .resume-detail.about .resume-item p span {
-    color: var(--white-color);
+    color: var(--text-color);
     margin-left: 1rem;
-    font-size: 1.8rem;
+    font-size: 1.6rem;
+    font-weight: 400;
 }
-
-/* ── PORTFOLIO ── */
 .portfolio {
     padding: 8rem 8% 5rem;
 }
@@ -565,10 +542,9 @@ section.active {
 
 .portfolio-box {
     position: relative;
-    padding: 1.5rem 1rem;
+    padding: 1rem;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
     gap: .8rem;
 }
 
@@ -577,12 +553,10 @@ section.active {
     padding: 1.6rem 0 2rem 0;
     width: 100%;
     box-sizing: border-box;
-    animation: slideIn 0.5s ease;
+    animation: slideIn 0.4s ease;
 }
 
-.portfolio-detail.active {
-    display: block;
-}
+.portfolio-detail.active { display: block; }
 
 @keyframes slideIn {
     from { opacity: 0; transform: translateY(10px); }
@@ -590,33 +564,40 @@ section.active {
 }
 
 .portfolio-detail .numb {
-    font-size: 6rem;
-    font-weight: 700;
-    opacity: 0.15;
+    font-size: 5rem;
+    font-weight: 800;
+    color: var(--main-color);
+    opacity: 0.2;
+    line-height: 1;
 }
 
 .portfolio-detail h3 {
-    font-size: 2.8rem;
-    margin: 1rem 0;
-    color: var(--white-color);
+    font-size: 2.6rem;
+    margin: .5rem 0 1rem;
+    color: var(--text-color);
+    font-weight: 700;
 }
 
 .portfolio-detail p {
-    font-size: 1.6rem;
-    line-height: 1.6;
+    font-size: 1.5rem;
+    line-height: 1.7;
+    color: #4a4a6a;
     margin-bottom: 0.6rem;
 }
 
 .portfolio-detail .tech {
-    margin-top: 0.4rem;
-    padding-top: 0.4rem;
-    color: var(--main-color);
-    font-weight: 700;
+    margin-top: 1rem;
+    padding: .6rem 1.2rem;
+    background: var(--second-bg-color);
+    border-radius: 2rem;
+    display: inline-block;
 }
 
 .portfolio-detail .tech p {
     font-weight: 700;
     margin: 0;
+    color: var(--main-color);
+    font-size: 1.4rem;
 }
 
 .live-github {
@@ -626,11 +607,10 @@ section.active {
 }
 
 .live-github a {
-    position: relative;
     width: 4.5rem;
     height: 4.5rem;
     border-radius: 50%;
-    background: var(--second-big-color);
+    background: var(--white-color);
     color: var(--main-color);
     display: flex;
     align-items: center;
@@ -642,17 +622,18 @@ section.active {
 
 .live-github a:hover {
     background: var(--main-color);
-    color: var(--bg-color);
-    transform: translateY(-5px);
+    color: var(--white-color);
+    transform: translateY(-4px);
+    box-shadow: 0 4px 15px var(--shadow);
 }
 
 .portfolio-carousel {
     width: 100%;
-    aspect-ratio: 20/10;
+    aspect-ratio: 4/3;
     overflow: hidden;
-    border-radius: 1.8rem;
-    background: var(--second-big-color);
-    box-shadow: 0 0 30px rgba(124, 243, 13, 0.2);
+    border-radius: 1.5rem;
+    background: var(--second-bg-color);
+    box-shadow: 0 8px 30px var(--shadow);
 }
 
 .portfolio-carousel .img-slide {
@@ -677,7 +658,7 @@ section.active {
 }
 
 .navigation {
-    margin-top: 2rem;
+    margin-top: 1.5rem;
     display: flex;
     justify-content: center;
     gap: 1.5rem;
@@ -689,9 +670,9 @@ section.active {
     border-radius: 50%;
     border: 2px solid var(--main-color);
     cursor: pointer;
-    background: var(--second-big-color);
+    background: var(--white-color);
     color: var(--main-color);
-    font-size: 2.2rem;
+    font-size: 2rem;
     font-weight: bold;
     transition: 0.3s ease;
     display: flex;
@@ -701,105 +682,97 @@ section.active {
 
 .navigation button:hover {
     background: var(--main-color);
-    color: var(--bg-color);
+    color: var(--white-color);
     transform: scale(1.1);
 }
 
 .navigation button:disabled {
-    opacity: 0.4;
+    opacity: 0.3;
     cursor: not-allowed;
     border-color: var(--disabled-color);
     color: var(--disabled-color);
 }
-
-/* ── CONTACT ── */
 .contact-container {
     display: grid;
-    grid-template-columns: 2fr 1.3fr;
-    gap: 3rem;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
 }
 
-.contact-container .contact-box:first-child {
-    align-self: center;
-}
+.contact-container .contact-box:first-child { align-self: center; }
 
-.contact-box h2 { font-size: 4.5rem; }
-.contact-box p  { font-size: 1.6rem; }
-
-.contact-box .desc {
-    margin: 1.5rem 0 2.5rem;
-}
+.contact-box h2 { font-size: 4rem; color: var(--text-color); }
+.contact-box p  { font-size: 1.6rem; color: #4a4a6a; }
+.contact-box .desc { margin: 1.5rem 0 2.5rem; }
 
 .contact-box .contact-detail {
     display: flex;
     align-items: center;
-    margin: 2rem 0;
+    margin: 1.8rem 0;
 }
 
 .contact-detail i {
     display: inline-flex;
-    background: var(--second-big-color);
+    background: var(--second-bg-color);
     color: var(--main-color);
-    font-size: 3rem;
+    font-size: 2.8rem;
     padding: 1.2rem;
-    border-radius: .6rem;
+    border-radius: .8rem;
     margin-right: 1.5rem;
+    border: 1px solid #e9d5ff;
 }
 
 .contact-detail .detail p:first-child {
-    color: var(--main-color);
+    color: var(--accent-color);
+    font-weight: 600;
 }
 
 .contact-box form {
-    background: var(--second-big-color);
-    padding: 2.5rem 3.5rem 3.5rem;
-    border-radius: 1rem;
-    text-align: center;
+    background: var(--white-color);
+    padding: 3rem;
+    border-radius: 1.5rem;
+    box-shadow: 0 4px 20px var(--shadow);
+    border: 1px solid #e9d5ff;
 }
 
-.contact-box .heading { font-size: 3.5rem; }
+.contact-box .heading { font-size: 3rem; }
 
 .contact-box .field-box {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
+    margin-top: 2rem;
 }
 
 .contact-box .field-box input,
 .contact-box .field-box textarea {
-    padding: 1.5rem;
+    padding: 1.3rem 1.5rem;
     background: var(--bg-color);
-    border: .15rem solid var(--bg-color);
+    border: .15rem solid #e9d5ff;
     border-radius: 0.8rem;
-    font-size: 1.6rem;
-    color: var(--white-color);
+    font-size: 1.5rem;
+    color: var(--text-color);
     font-family: 'Poppins', sans-serif;
     transition: 0.3s ease;
 }
 
 .contact-box .field-box input::placeholder,
-.contact-box .field-box textarea::placeholder {
-    color: var(--white-color);
-}
+.contact-box .field-box textarea::placeholder { color: #9ca3af; }
 
 .contact-box .field-box textarea {
     grid-column: 1/-1;
-    height: 15rem;
+    height: 13rem;
     resize: vertical;
 }
 
 .contact-box .field-box input:focus,
 .contact-box .field-box textarea:focus {
     border-color: var(--main-color);
-    box-shadow: 0 0 10px rgba(124, 243, 13, 0.3);
+    box-shadow: 0 0 10px rgba(124, 58, 237, 0.2);
+    outline: none;
 }
 
-.contact-box .btn {
-    margin-top: 2rem;
-    cursor: pointer;
-}
+.contact-box .btn { margin-top: 2rem; }
 
-/* ── BREAKPOINTS ── */
 @media screen and (max-width: 1200px) {
     html { font-size: 55%; }
 }
@@ -807,10 +780,7 @@ section.active {
 @media screen and (max-width: 992px) {
     header  { padding: 2rem 4%; }
     section { padding: 10rem 4% 2rem; }
-}
-
-@media screen and (max-width: 810px) {
-    .contact-box .field-box { grid-template-columns: 1fr; }
+    .contact-container { grid-template-columns: 1fr; }
 }
 
 @media screen and (max-width: 768px) {
@@ -822,14 +792,15 @@ section.active {
         left: 0;
         width: 100%;
         padding: 1rem 0;
-        background: var(--bg-color);
-        border-top: .1rem solid rgba(0,0,0,.2);
+        background: var(--white-color);
+        border-top: .1rem solid #e9d5ff;
+        box-shadow: 0 8px 20px var(--shadow);
         text-align: center;
         display: none;
     }
 
     nav.active { display: block; }
-    nav a { display: block; margin: 4rem; }
+    nav a { display: block; margin: 3rem; font-size: 2rem; }
 
     .home {
         flex-direction: column-reverse;
@@ -839,44 +810,61 @@ section.active {
     }
 
     .home-detail h2 {
-        font-size: 2.6rem;
+        font-size: 2.4rem;
         white-space: normal;
         flex-wrap: wrap;
     }
 
-    .home-img .img-box { width: 30rem; height: 30rem; }
+    .home-img .img-box { width: 28rem; height: 28rem; }
 
-    .resume-container,
-    .portfolio-container,
-    .contact-container {
+    .resume-container { grid-template-columns: 1fr; gap: 2rem; }
+
+    /* PORTFOLIO MOBILE — single column, image on top */
+    .portfolio-container {
         grid-template-columns: 1fr;
+        gap: 2rem;
     }
 
-    .resume-container { gap: 3rem; }
-    .contact-box .field-box { grid-template-columns: repeat(2, 1fr); }
+    .portfolio-box:last-child { order: -1; }
+
+    .portfolio-carousel { aspect-ratio: 16/9; }
+    .portfolio-detail h3 { font-size: 2.2rem; }
+    .portfolio-detail .numb { font-size: 4rem; }
+
+    .contact-container { grid-template-columns: 1fr; gap: 2rem; }
+    .contact-box .field-box { grid-template-columns: 1fr; }
 }
 
 @media screen and (max-width: 600px) {
-    .home-img .img-box { width: 25rem; height: 25rem; }
-    .home-detail h2 { font-size: 2.2rem; }
+    .home-img .img-box { width: 22rem; height: 22rem; }
+    .home-detail h1 { font-size: 4rem; }
+    .home-detail h2 { font-size: 2rem; }
+    .home-detail p  { font-size: 1.6rem; }
+    .portfolio { padding: 8rem 4% 5rem; }
     .contact-box .field-box { grid-template-columns: 1fr; }
 }
 
 @media screen and (max-width: 450px) {
     html { font-size: 50%; }
+
+    .home-detail .btn-sci {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.5rem;
+    }
+
+    .home-detail .btn-sci .sci { margin-left: 0; }
 }
 
 @media screen and (max-width: 400px) {
     .home-detail,
     .resume-box h2,
     .resume-box .heading,
-    .resume-box .desc,
-    .resume-detail.about .resume-item {
+    .resume-box .desc {
         text-align: center;
     }
 
-    .home-detail .btn-sci { flex-direction: column-reverse; }
-    .home-detail .btn-sci .sci { margin-left: 0; margin-bottom: 2rem; }
-    .contact-box form { padding: 2.5rem 3rem 3.5rem; }
-    .contact-box h2   { font-size: 3.5rem; }
+    .home-detail .btn-sci { align-items: center; }
+    .contact-box form { padding: 2rem; }
+    .contact-box h2   { font-size: 3rem; }
 }
