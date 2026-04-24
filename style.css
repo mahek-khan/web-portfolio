@@ -650,7 +650,7 @@ section.active {
 
 .portfolio-carousel {
     width: 100%;
-    aspect-ratio: 4/3;
+    aspect-ratio: 16/9;
     overflow: hidden;
     border-radius: 1.5rem;
     background: var(--second-bg-color);
