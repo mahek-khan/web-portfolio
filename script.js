@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    /* ── SELECTORS ── */
     const navLinks     = document.querySelectorAll('header nav a');
     const sections     = document.querySelectorAll('section');
     const menuIcon     = document.querySelector('#menu-icon');
@@ -9,13 +8,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const barAnimation = document.querySelector('.bars-animation');
     const cvButton     = document.querySelector('.btn-sci .btn');
 
-    /* ── MOBILE MENU ── */
     menuIcon.addEventListener('click', () => {
         menuIcon.classList.toggle('bx-x');
         navbar.classList.toggle('active');
     });
 
-    /* ── DOWNLOAD CV ── */
     if (cvButton) {
         cvButton.addEventListener('click', (e) => {
             e.preventDefault();
@@ -28,7 +25,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    /* ── TYPING ANIMATION ── */
     const typingEl = document.querySelector('.typing-text');
     const words    = ['frontend Developer', 'backend Developer', 'coder'];
     let wordIndex  = 0;
@@ -49,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
         let speed = isDeleting ? 60 : 100;
 
         if (!isDeleting && charIndex === currentWord.length) {
-            speed = 1800; // pause at end
+            speed = 1800;
             isDeleting = true;
         } else if (isDeleting && charIndex === 0) {
             isDeleting = false;
@@ -62,7 +58,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     type();
 
-    /* ── ANIMATION RESET ── */
     function resetAnimations() {
         header.classList.remove('active');
         void header.offsetWidth;
@@ -73,7 +68,6 @@ document.addEventListener('DOMContentLoaded', () => {
         barAnimation.classList.add('active');
     }
 
-    /* ── SHOW SECTION ── */
     function showSection(index) {
         sections.forEach(sec => {
             sec.classList.remove('active');
@@ -87,7 +81,6 @@ document.addEventListener('DOMContentLoaded', () => {
         navbar.classList.remove('active');
     }
 
-    /* ── NAV LINKS ── */
     navLinks.forEach((link, idx) => {
         link.addEventListener('click', (e) => {
             e.preventDefault();
@@ -106,7 +99,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    /* ── RESUME BUTTONS ── */
     const resumeBtns    = document.querySelectorAll('.resume-btn');
     const resumeDetails = document.querySelectorAll('.resume-detail');
 
@@ -119,7 +111,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    /* ── PORTFOLIO SLIDER ── */
     const portfolioDetails = document.querySelectorAll('.portfolio-detail');
     const arrowRight       = document.getElementById('next');
     const arrowLeft        = document.getElementById('prev');
@@ -130,10 +121,23 @@ document.addEventListener('DOMContentLoaded', () => {
         const total = imgItems.length;
         let current = 0;
 
+        imgSlide.style.display  = 'flex';
+        imgSlide.style.width    = `${total * 100}%`;
+        imgSlide.style.transition = 'transform 0.5s ease';
+
+        imgItems.forEach(item => {
+            item.style.width     = `${100 / total}%`;
+            item.style.minWidth  = `${100 / total}%`;
+            item.style.flexShrink = '0';
+            item.style.boxSizing = 'border-box';
+        });
+
         function updateSlider() {
-            imgSlide.style.transform = `translateX(-${current * 100}%)`;
+            imgSlide.style.transform = `translateX(-${current * (100 / total)}%)`;
+
             portfolioDetails.forEach(d => d.classList.remove('active'));
             if (portfolioDetails[current]) portfolioDetails[current].classList.add('active');
+
             arrowLeft.disabled  = current <= 0;
             arrowRight.disabled = current >= total - 1;
         }
@@ -146,7 +150,6 @@ document.addEventListener('DOMContentLoaded', () => {
             if (current > 0) { current--; updateSlider(); }
         });
 
-        /* Touch swipe */
         let touchStartX = 0;
         imgSlide.addEventListener('touchstart', (e) => {
             touchStartX = e.changedTouches[0].screenX;
