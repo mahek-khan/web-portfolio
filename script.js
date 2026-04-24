@@ -110,61 +110,51 @@ document.addEventListener('DOMContentLoaded', () => {
             if (resumeDetails[idx]) resumeDetails[idx].classList.add('active');
         });
     });
+const portfolioDetails = document.querySelectorAll('.portfolio-detail');
+const arrowRight       = document.getElementById('next');
+const arrowLeft        = document.getElementById('prev');
+const imgSlide         = document.querySelector('.portfolio-carousel .img-slide');
+const imgItems         = document.querySelectorAll('.portfolio-carousel .img-item');
 
-    const portfolioDetails = document.querySelectorAll('.portfolio-detail');
-    const arrowRight       = document.getElementById('next');
-    const arrowLeft        = document.getElementById('prev');
-    const imgSlide         = document.querySelector('.portfolio-carousel .img-slide');
-    const imgItems         = document.querySelectorAll('.portfolio-carousel .img-item');
+if (imgSlide && arrowRight && arrowLeft) {
+    const total = imgItems.length;
+    let current = 0;
 
-    if (imgSlide && arrowRight && arrowLeft) {
-        const total = imgItems.length;
-        let current = 0;
+    imgSlide.style.width = '100%';
 
-        imgSlide.style.display  = 'flex';
-        imgSlide.style.width    = `${total * 100}%`;
-        imgSlide.style.transition = 'transform 0.5s ease';
+    function updateSlider() {
+        imgSlide.style.transform = `translateX(-${current * 100}%)`;
 
-        imgItems.forEach(item => {
-            item.style.width     = `${100 / total}%`;
-            item.style.minWidth  = `${100 / total}%`;
-            item.style.flexShrink = '0';
-            item.style.boxSizing = 'border-box';
-        });
+        portfolioDetails.forEach(d => d.classList.remove('active'));
+        if (portfolioDetails[current]) portfolioDetails[current].classList.add('active');
 
-        function updateSlider() {
-            imgSlide.style.transform = `translateX(-${current * (100 / total)}%)`;
-
-            portfolioDetails.forEach(d => d.classList.remove('active'));
-            if (portfolioDetails[current]) portfolioDetails[current].classList.add('active');
-
-            arrowLeft.disabled  = current <= 0;
-            arrowRight.disabled = current >= total - 1;
-        }
-
-        arrowRight.addEventListener('click', () => {
-            if (current < total - 1) { current++; updateSlider(); }
-        });
-
-        arrowLeft.addEventListener('click', () => {
-            if (current > 0) { current--; updateSlider(); }
-        });
-
-        let touchStartX = 0;
-        imgSlide.addEventListener('touchstart', (e) => {
-            touchStartX = e.changedTouches[0].screenX;
-        }, { passive: true });
-
-        imgSlide.addEventListener('touchend', (e) => {
-            const diff = touchStartX - e.changedTouches[0].screenX;
-            if (Math.abs(diff) > 50) {
-                if (diff > 0 && current < total - 1) current++;
-                else if (diff < 0 && current > 0) current--;
-                updateSlider();
-            }
-        }, { passive: true });
-
-        updateSlider();
+        arrowLeft.disabled  = current <= 0;
+        arrowRight.disabled = current >= total - 1;
     }
+
+    arrowRight.addEventListener('click', () => {
+        if (current < total - 1) { current++; updateSlider(); }
+    });
+
+    arrowLeft.addEventListener('click', () => {
+        if (current > 0) { current--; updateSlider(); }
+    });
+
+    let touchStartX = 0;
+    imgSlide.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+
+    imgSlide.addEventListener('touchend', (e) => {
+        const diff = touchStartX - e.changedTouches[0].screenX;
+        if (Math.abs(diff) > 50) {
+            if (diff > 0 && current < total - 1) current++;
+            else if (diff < 0 && current > 0) current--;
+            updateSlider();
+        }
+    }, { passive: true });
+
+    updateSlider();
+}
 
 });
