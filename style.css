@@ -262,8 +262,8 @@ section.active {
 /* ── PROFILE IMAGE ── */
 .home-img .img-box {
     position: relative;
-    width: 32vw;
-    height: 32vw;
+    width: 35vw;
+    height: 35vw;
     border-radius: 50%;
     padding: .5rem;
     display: flex;
